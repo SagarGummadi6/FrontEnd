@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Form</title>
+</head>
+<body>
+
+  <h1>Login Form</h1>
+
+  <form action="conformation.html" method="post" target="confirmFrame">
+    <label>Username:</label>
+    <input type="text" name="username"><br><br>
+
+    <label>Password:</label>
+    <input type="password" name="password"><br><br>
+
+    <label>Country:</label>
+    <select name="country">
+      <option value="india">India</option>
+      <option value="uk">UK</option>
+      <option value="japan">Japan</option>
+    </select><br><br>
+
+    <p>Gender:</p>
+    <label><input type="radio" name="gender" value="male"> Male</label>
+    <label><input type="radio" name="gender" value="female"> Female</label><br><br>
+
+    <p>Interests:</p>
+    <label><input type="checkbox" name="interest" value="sports"> Sports</label>
+    <label><input type="checkbox" name="interest" value="music"> Music</label><br><br>
+
+    <button type="submit">Submit</button>
+  </form>
+
+
+  <iframe name="confirmFrame" style="border:none; height: 50px; width: 100%; margin-top: 20px;"></iframe>
+
+</body>
+</html>
