@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Simple CSS Demo</title>
+    <style>
+        .navbar {
+            position: sticky;
+            top: 0;
+            background-color: rgb(65, 59, 59);
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-family: sans-serif;
+        }
+
+
+        .box {
+            margin: 30px;
+            padding: 20px;
+            border: 2px solid black;
+            background-color: white;
+            width: 250px;
+        }
+
+
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgb(102, 203, 250);
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+
+        .background {
+            position: absolute;
+            top: 120px;
+            left: 120px;
+            width: 100px;
+            height: 100px;
+            background: red;
+            z-index: 1;
+        }
+
+        .foreground {
+            position: absolute;
+            top: 140px;
+            left: 140px;
+            width: 100px;
+            height: 100px;
+            background: blue;
+            z-index: 2;
+        }
+
+        .inner1 {
+            position: absolute;
+            top: 340px;
+            left: 240px;
+            width: 50px;
+            height: 50px;
+            background: blue;
+        }
+
+        .inner2 {
+            position: absolute;
+            top: 340px;
+            left: 290px;
+            width: 50px;
+            height: 50px;
+            background: red;
+        }
+
+        .inner3 {
+            position: absolute;
+            top: 390px;
+            left: 290px;
+            width: 50px;
+            height: 50px;
+            background: greenyellow;
+        }
+
+        .inner4 {
+            position: absolute;
+            top: 390px;
+            left: 240px;
+            width: 50px;
+            height: 50px;
+            background: orange;
+        }
+
+        .circle {
+            position: absolute;
+            left: 265px;
+            top: 365px;
+            width: 50px;
+            height: 50px;
+            background-color: rgb(135, 40, 72);
+            border-radius: 50%;
+        }
+
+
+        body {
+            height: 1500px;
+            /* for scrolling */
+            margin: 0;
+            font-family: sans-serif;
+            background-color: cadetblue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">Sticky Navbar</div>
+
+    <div class="box">Simple Box</div>
+
+    <div class="center">I'm Centered</div>
+
+    <div class="background"></div>
+    <div class="foreground"></div>
+    <div class="new">
+        <div class="inner1"></div>
+        <div class="inner2"></div>
+        <div class="inner3"></div>
+        <div class="inner4"></div>
+        <div class="circle"></div>
+    </div>
+
+</body>
+
+</html>
