@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple CSS Demo</title>
+  <style>
+    :root {
+      --bg-color: white;
+      --text-color: black;
+      --btn-color: lightblue;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: monospace;
+      padding: 20px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: var(--btn-color);
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    button:hover {
+      background-color: skyblue;
+      transform: scale(1.1);
+    }
+
+    .box {
+      width: 50px;
+      height: 50px;
+      background: rgb(234, 83, 28);
+      position: relative;
+      animation: moveAcross 3s infinite alternate;
+    }
+
+    @keyframes moveAcross {
+      0% { left: 0; }
+      100% { left: 300px; }
+    }
+
+    .toggle {
+      margin-top: 20px;
+    }
+
+    .dark-theme {
+      --bg-color: rgb(34, 34, 34);
+      --text-color: rgb(238, 238, 238);
+      --btn-color: rgb(18, 137, 249);
+    }
+  </style>
+</head>
+<body>
+  <h1>CSS Effects Demo</h1>
+
+  <button onclick="toggleTheme()">Toggle Theme</button>
+
+  <div class="box"></div>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('dark-theme');
+    }
+  </script>
+</body>
+</html>
