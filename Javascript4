@@ -1,0 +1,36 @@
+const numbers = [10, 20, 30, 40, 50];
+
+const sum = numbers.reduce((accumulator, currentValue) => {
+  return accumulator + currentValue;
+}, 0);
+
+console.log("Sum:", sum);
+
+
+
+
+function filterEvenNumbers(arr) {
+  return arr.filter(num => num % 2 === 0);
+}
+
+const sampleArray = [1, 2, 3, 4, 5, 6];
+const evenNumbers = filterEvenNumbers(sampleArray);
+
+console.log("Even Numbers:", evenNumbers);
+
+
+
+
+
+
+const book = {
+  title: "Harry Potter",
+  author: "J.K. Rowling",
+  pages: 1320,
+  isAvailable: true
+};
+
+console.log("Book Title:", book.title);
+console.log("Author:", book.author);
+console.log("Pages:", book.pages);
+console.log("Available:", book.isAvailable);
