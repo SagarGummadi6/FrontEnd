@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript DOM Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    button {
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<h2 id="heading">Welcome!</h2>
+
+<button onclick="changeHeadingText()">Change Heading Text</button>
+<button onclick="changeBackground()">Change Background Color</button>
+
+<input type="text" id="nameInput" placeholder="Enter your name">
+<button onclick="showGreeting()">Greet</button>
+<p id="greetingText"></p>
+
+<button onclick="showPopup()">Show Popup</button>
+
+<script>
+function changeHeadingText() {
+  document.getElementById("heading").innerText = "You clicked the button!";
+}
+
+function changeBackground() {
+  const colors = ["lightblue", "lightgreen", "lightyellow", "lightpink", "lavender", "white", "beige"];
+  const randomIndex = Math.floor(Math.random() * colors.length);
+  document.body.style.backgroundColor = colors[randomIndex];
+}
+
+function showGreeting() {
+  const name = document.getElementById("nameInput").value;
+  document.getElementById("greetingText").innerText = "Hello, " + name + "!";
+}
+
+function showPopup() {
+  alert("This is a popup alert!");
+}
+</script>
+
+</body>
+</html>
