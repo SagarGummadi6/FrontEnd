@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A simple interactive HTML page demonstrating JavaScript features and event handling." />
+
+  <title>JavaScript Interactive Page</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 40px;
+      background: #f0f2f5;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #2c3e50;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+      color: #34495e;
+    }
+
+    .section {
+      background: #fff;
+      border-radius: 12px;
+      padding: 25px 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+      transition: transform 0.2s ease;
+    }
+
+    .section:hover {
+      transform: scale(1.01);
+    }
+
+    button {
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      padding: 10px 16px;
+      font-size: 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+      transition: border-color 0.3s ease;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: #3498db;
+      outline: none;
+    }
+
+    #hiddenText {
+      display: none;
+      margin-top: 15px;
+      color: #27ae60;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    #wordCount,
+    #compareResult,
+    #dateDisplay {
+      font-weight: 600;
+      color: #e67e22;
+    }
+  </style>
+</head>
+<body>
+
+  <h1> Simple JavaScript Features</h1>
+
+  <div class="section">
+    <button id="alertBtn">Click for Alert</button>
+  </div>
+
+  <div class="section">
+    <button id="colorBtn">Change Heading Color</button>
+  </div>
+
+  <div class="section">
+    <button id="dateBtn">Show Current Date</button>
+    <p id="dateDisplay"></p>
+  </div>
+
+  <div class="section">
+    <button id="toggleBtn">Toggle Secret</button>
+    <p id="hiddenText"> Surprise! You found the hidden text!</p>
+  </div>
+
+  <div class="section">
+    <textarea id="wordArea" rows="3" placeholder="Type something..."></textarea>
+    <p>Words: <span id="wordCount">0</span></p>
+  </div>
+
+  <div class="section">
+    <input type="number" id="num1" placeholder="Number 1" />
+    <input type="number" id="num2" placeholder="Number 2" />
+    <button id="compareBtn">Compare</button>
+    <p id="compareResult"></p>
+  </div>
+
+  <div class="section">
+    <button id="resetBtn">Reset All</button>
+  </div>
+
+  <script>
+    document.getElementById("alertBtn").addEventListener("click", function () {
+      alert("You clicked the alert button!");
+    });
+
+    document.getElementById("colorBtn").addEventListener("click", function () {
+      const heading = document.querySelector("h1");
+      heading.style.color = heading.style.color === "blue" ? "#34495e" : "blue";
+    });
+
+    document.getElementById("dateBtn").addEventListener("click", function () {
+      const now = new Date();
+      document.getElementById("dateDisplay").innerText = now.toDateString();
+    });
+
+    document.getElementById("toggleBtn").addEventListener("click", function () {
+      const text = document.getElementById("hiddenText");
+      text.style.display = text.style.display === "none" ? "block" : "none";
+    });
+
+    document.getElementById("wordArea").addEventListener("input", function () {
+      const words = this.value.trim().split(/\s+/).filter(Boolean);
+      document.getElementById("wordCount").innerText = words.length;
+    });
+
+    document.getElementById("compareBtn").addEventListener("click", function () {
+      const n1 = parseFloat(document.getElementById("num1").value);
+      const n2 = parseFloat(document.getElementById("num2").value);
+      const result = document.getElementById("compareResult");
+
+      if (isNaN(n1) || isNaN(n2)) {
+        result.innerText = "Please enter both numbers.";
+      } else if (n1 > n2) {
+        result.innerText = `${n1} is greater than ${n2}`;
+      } else if (n1 < n2) {
+        result.innerText = `${n2} is greater than ${n1}`;
+      } else {
+        result.innerText = "Both numbers are equal.";
+      }
+    });
+
+    document.getElementById("resetBtn").addEventListener("click", function () {
+      document.getElementById("wordArea").value = "";
+      document.getElementById("wordCount").innerText = "0";
+      document.getElementById("num1").value = "";
+      document.getElementById("num2").value = "";
+      document.getElementById("compareResult").innerText = "";
+      document.getElementById("dateDisplay").innerText = "";
+      document.getElementById("hiddenText").style.display = "none";
+      document.querySelector("h1").style.color = "#34495e";
+    });
+  </script>
+
+</body>
+</html>
